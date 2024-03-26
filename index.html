@@ -1,81 +1,250 @@
 <!DOCTYPE html> 
+
 <html> 
+
 <!-- The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+
  
+
 THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
+
  
+
  
+
 Authors in chronological order of contribution:
+
 Tim Riedel
-Author 2
+
+Akansha Bojjam // added developer name
+
  
+
 Further Information:
+
 http://cns.utexas.edu/fri
+
  
+
 Research Educator:
+
 Timothy Riedel
+
 triedel@utexas.edu
+
  
+
 Brief Description of Goal of Code:
-blah, blah, blah,
+
+To create a drawing canvas that fits on a phone screen and draws when buttons are pressed. // added description of goal of code
+
  
+
 Known Issues:
-blah, blah, blah, blah
+
+None // updates known issues with code
+
+
 https://www.w3schools.com/w3css/default.asp
+
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+
 -->
+
 	
+
    <head> 
+
       <title>App6---HTML5-Canvas</title>  
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
+
       <meta name="apple-mobile-web-app-capable" content="yes">
+
       <link rel="stylesheet" href="w3.css">
+
       <link rel="stylesheet" href="w3-colors-flat.css">
+
    </head> 
 
 
+
+
+
 <script>
+
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
+
+// alert("This file last modified " + docMod); generates alert box with time stamp. If annoying, comment out this entire line.
+
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
+
+
+
+
 </script>
 
 
 
+
+
+
+
 <style>	
+
 .body {
+
      margin: 0em;
+
 }
+
 .page {
+
     width: 100vw;
+
     height: 100vh;
+
     position: fixed;
+
     top: 0;
+
     left: -100vw;
+
     overflow-y: auto;
+
     z-index: 0;
+
     background-color: hsl(0,0%,100%);
+
 }
+
   .page:target {
+
     left: 0vw;
+
     z-index: 1;
+
 }
+
 </style>
 
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta http-equiv="Content-Style-Type" content="text/css">
+
+  <title></title>
+
+  <meta name="Generator" content="Cocoa HTML Writer">
+
+  <meta name="CocoaVersion" content="2487.3">
+
+  <style type="text/css">
+
+    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+
+    span.s1 {font-kerning: none}
+
+  </style>
+
+</head>
 <body>
+
 <div id="header" class="w3-container w3-flat-carrot">
+
 	<h1>App6---HTML5-Canvas</h1>
+
 </div>
+
 	
-<div id="content" class="w3-container">
-	<p>Content goes here.</p>
+
+<div id="content" class="w3-container"> 
+
+	<p>This app will draw on the canvas when the buttons are clicked. Click a button to try it out!</p>  <!-- updated content of introduction -->
+
+
+	<canvas id="a" width="300" height="225"<canvas style="border:1px solid #000000;"></canvas> 
+
+	<div id="content" class="w3-container"> <!--creates button-->
+		<a onclick="drawSquare()" class="w3-btn w3-black">Draw square</a> <!--created button to draw square-->
+		<script>
+			function drawSquare()
+			{
+	  		var a_canvas = document.getElementById("a");
+			var a_context = a_canvas.getContext("2d");
+	 		a_context.fillRect(100, 25, 150, 100);
+			}
+
+		</script/>
+	</div>
+
+	<div id="content" class="w3-container"> <!--creates button-->
+		<a onclick="writeName()" class="w3-btn w3-black">Write name</a> <!--created button to write name-->
+		<script>
+			function writeName()
+			{
+	  		var a_canvas = document.getElementById("a");
+			var a_context = a_canvas.getContext("2d");
+	 		a_context.font = "bold 20px sans-serif";
+			a_context.fillText("Akansha", 50, 150);
+			}
+
+		</script/>
+	</div>
+
+	<div id="content" class="w3-container"> <!--creates button-->
+		<a onclick="insertImage()" class="w3-btn w3-black">Insert image</a> <!--created button to insert image-->
+
+
+		 <img id="capybara" src="https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg" alt="capybara" width="1" height="1"> 
+
+		<script>
+		var img = document.getElementById("capybara");
 		
+		function insertImage() {
+  		var canvas = document.getElementById("a");
+  		var context = canvas.getContext("2d");
+  		context.drawImage(img, 0, 0, 80, 85);
+
+		};
+		</script>
+
+
+	</div>
+
+	<div id="content" class="w3-container"> <!--creates button-->
+		<a onclick="clearCanvas()" class="w3-btn w3-black">Clear Canvas</a> <!--created button to clear canvas-->
+		<script>
+			function clearCanvas()
+			{
+	  		var a_canvas = document.getElementById("a");
+			a_canvas.width = a_canvas.width;
+			}
+
+		</script/>
+	</div>
+
+		
+
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+
  	
+
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+
+
 <footer class="w3-bottom w3-container w3-flat-carrot">
+
 	<p>DIY!</p>
+
 </footer>
 
 </body>
