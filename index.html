@@ -15,7 +15,6 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
 Authors in chronological order of contribution:
 
 Tim Riedel
-
 Akansha Bojjam // added developer name
 
  
@@ -170,14 +169,14 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	<p>This app will draw on the canvas when the buttons are clicked. Click a button to try it out!</p>  <!-- updated content of introduction -->
 
 
-	<canvas id="a" width="300" height="225"<canvas style="border:1px solid #000000;"></canvas> 
+	<canvas id="a" width="300" height="225"<canvas style="border:1px solid #000000;"></canvas> <!-- creates canvas and adds thin border around it -->
 
 	<div id="content" class="w3-container"> <!--creates button-->
-		<a onclick="drawSquare()" class="w3-btn w3-black">Draw square</a> <!--created button to draw square-->
+		<a onclick="drawSquare()" class="w3-btn w3-black">Draw square</a> <!--created button to draw square, calls function drawSquare when clicked -->
 		<script>
-			function drawSquare()
+			function drawSquare() 
 			{
-	  		var a_canvas = document.getElementById("a");
+	  		var a_canvas = document.getElementById("a"); 
 			var a_context = a_canvas.getContext("2d");
 	 		a_context.fillRect(100, 25, 150, 100);
 			}
@@ -186,7 +185,7 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	</div>
 
 	<div id="content" class="w3-container"> <!--creates button-->
-		<a onclick="writeName()" class="w3-btn w3-black">Write name</a> <!--created button to write name-->
+		<a onclick="writeName()" class="w3-btn w3-black">Write name</a> <!-- created button to write name, calls function writeName when clicked -->
 		<script>
 			function writeName()
 			{
@@ -200,18 +199,18 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	</div>
 
 	<div id="content" class="w3-container"> <!--creates button-->
-		<a onclick="insertImage()" class="w3-btn w3-black">Insert image</a> <!--created button to insert image-->
+		<a onclick="insertImage()" class="w3-btn w3-black">Insert image</a> <!--created button to insert image, calls function insertImage when clicked-->
 
-
+		<!-- names image capybara -->
 		 <img id="capybara" src="https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg" alt="capybara" width="1" height="1"> 
 
 		<script>
-		var img = document.getElementById("capybara");
+		var img = document.getElementById("capybara"); // names variable img to call capybara
 		
 		function insertImage() {
   		var canvas = document.getElementById("a");
-  		var context = canvas.getContext("2d");
-  		context.drawImage(img, 0, 0, 80, 85);
+  		var context = canvas.getContext("2d"); 
+  		context.drawImage(img, 0, 0, 80, 85); // draws image at point 0,0 with dimensions 80,85
 
 		};
 		</script>
@@ -220,12 +219,12 @@ console.log("This file last modified " + docMod); // generates message in javaSc
 	</div>
 
 	<div id="content" class="w3-container"> <!--creates button-->
-		<a onclick="clearCanvas()" class="w3-btn w3-black">Clear Canvas</a> <!--created button to clear canvas-->
+		<a onclick="clearCanvas()" class="w3-btn w3-black">Clear Canvas</a> <!--created button to clear canvas, calls function clearCanvas when clicked-->
 		<script>
 			function clearCanvas()
 			{
 	  		var a_canvas = document.getElementById("a");
-			a_canvas.width = a_canvas.width;
+			a_canvas.width = a_canvas.width; // resets width of canvas which automatically clears it
 			}
 
 		</script/>
